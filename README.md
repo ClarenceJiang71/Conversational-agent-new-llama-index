@@ -1,5 +1,7 @@
 # 🦙🧪  Llama Lab 🧬🦙
 
+This is originally a repo from llama lab where it dicusses 3 projects built by llama index. But all codes are written in a very old version of Llama Index. I am interested in the conversational agent project and hope to 1. rebuild the whole demo with the current version (0.10.28) of llama index 2. adding more features into the project. Below is the original Readme from Llama-hab 
+
 Llama Lab is a repo dedicated to building cutting-edge projects using [LlamaIndex](https://github.com/jerryjliu/llama_index). 
 
 LlamaIndex is an interface for LLM data augmentation. It provides easy-to-use and flexible tools to index
@@ -22,31 +24,11 @@ Each folder is a stand-alone project. See below for a description of each projec
 
 ### llama_agi (v0.1.0)
 
-Inspired from [babyagi](https://github.com/yoheinakajima/babyagi) and [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT), using LlamaIndex as a task manager and LangChain as a task executor.
-
-The current version of this folder will start with an overall objective ("solve world hunger" by default), and create/prioritize the tasks needed to achieve that objective. LlamaIndex is used to create and prioritize tasks, while LangChain is used to guess the "result" of completing each action.
-
-Using LangChain and LlamaIndex, llama_agi has access to the following tools: google-search, webpage reading, and note-taking. Note that the google-search tool requires [a Google API key and a CSE ID](https://cse.google.com/cse/).
-
-This will run in a loop until the task list is empty (or maybe you run out of OpenAI credits 😉).
-
-For more info, see the README in the [llama_agi folder](./llama_agi/README.md) or the [pypi page](https://pypi.org/project/llama-agi/).
+[skipped]
 
 ### auto_llama
 
-Inspired by [autogpt](https://github.com/Significant-Gravitas/Auto-GPT). This implement its own Agent system similar to AutoGPT. 
-Given a user query, this system has the capability to search the web and download web pages, before analyzing the combined data and compiling a final answer to the user's prompt.
-
-Example usage:
-
-```bash
-cd auto_llama
-pip install -r requirements.txt
-python -m auto_llama
-Enter what you would like AutoLlama to do:
-Summarize the financial news from the past week.
-
-```
+[skipped]
 
 ### Conversational Agents
 
@@ -64,11 +46,7 @@ jupyter notebook ConvoAgents.ipynb
 
 ### External projects
 
-We also provide references to other project repos using LlamaIndex in novel ways.
-
-These repos are hosted as submodules in our `external` folder.
-
-Check it out here: https://github.com/run-llama/llama-lab/tree/main/external
+[skipped]
 
 ## Ecosystem
 
