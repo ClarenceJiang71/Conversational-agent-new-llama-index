@@ -4,10 +4,12 @@ The goal of this is to simulate conversation between two agents.
 
 """
 
-from llama_index import (
-    GPTVectorStoreIndex, GPTListIndex, Document, ServiceContext
-)
-from llama_index.indices.base import BaseGPTIndex
+
+
+
+from llama_index.core import (VectorStoreIndex, SummaryIndex, Document, ServiceContext)
+from llama_index.core.indices.base import BaseIndex
+
 from llama_index.data_structs import Node
 from llama_index.prompts.prompts import QuestionAnswerPrompt
 from collections import deque
@@ -46,7 +48,7 @@ class ConvoAgent(BaseModel):
     """Basic abstraction for a conversation agent."""
     name: str
     st_memory: deque
-    lt_memory: BaseGPTIndex
+    lt_memory: BaseIndex
     lt_memory_query_kwargs: Dict = Field(default_factory=dict)
     service_context: ServiceContext
     st_memory_size: int = 10
@@ -62,13 +64,13 @@ class ConvoAgent(BaseModel):
         cls,
         name: Optional[str] = None,
         st_memory: Optional[deque] = None,
-        lt_memory: Optional[BaseGPTIndex] = None,
+        lt_memory: Optional[BaseIndex] = None,
         service_context: Optional[ServiceContext] = None,
         **kwargs
     ) -> "ConvoAgent":
         name = name or "Agent"
         st_memory = st_memory or deque()
-        lt_memory = lt_memory or GPTVectorStoreIndex([])
+        lt_memory = lt_memory or VectorStoreIndex([])
         service_context = service_context or ServiceContext.from_defaults()
         return cls(
             name=name,
